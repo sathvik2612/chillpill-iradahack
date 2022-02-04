@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://kit.fontawesome.com/22b75f9236.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="doctors.css">
+    <title>Eye Specialists </title>
+  </head>
+  <style>
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+    body {
+      background-color: #d1ddfa;
+      background-image: url('https://cdn.dribbble.com/users/1180825/screenshots/2967171/daily-ui-059.gif');
+      background-attachment: fixed;
+      font-family: 'Source Sans 3', sans-serif;
+      padding-bottom: 50px;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.box{
+  width: 450px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 15px;
+  padding: 40px;
+  text-align:center;
+  margin: auto;
+  margin-top: 5%;
+  color:white;
+  font-family: 'Source Sans 3', sans-serif;
+
+}
+.box-img{
+  border-radius:50%;
+  width:200px;
+  height:200px;
+}
+.box h1{
+  font-size: 40px;
+  letter-spacing: 4px;
+  font-weight: 100;
+}
+.box h5{
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: 100;
+
+}
+.box p{
+  text-align: center;
+  padding-bottom: 10px;
+}
+ul{
+  margin:0;
+  padding:0;
+}
+.box li{
+  display: inline-block;
+  margin:6px;
+  list-style:none;
+}
+.box li a{
+  color: white;
+  text-decoration: none;
+  font-size: 60px;
+  transition: all ease-in-out 250ms;
+}
+.box li a:hover{
+  color: #b9b9b9;
+}
+
+  </style>
+  <body>
+    <div class="box">
+     <img src="https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop" alt="" class="box-img">
+     <h1>Jamie Williams</h1>
+     <h5>Eye Specialist</h5>
+     <p>Jamie Williams is an eye specialist. who treated thousands of patients. She is the best doctor in the city for eye diseases. She is a graduate from the top reputed college in U.K.</p>
+
+   <ul>
+     <li><a href="https://buy.stripe.com/dR62aZeCvc1576M144"><i class="fas fa-wallet"></i></a></li>
+     <li><a href="https://buy.stripe.com/28o5nbcund59cr6289"><i class="far fa-clock"></a></i></li>
+     <li><a href="/map"><i class="fas fa-map-marker-alt"></i></a></li>
+   </ul>
+   </div>
+   <div class="box">
+    <img src="https://media.istockphoto.com/photos/doctor-holding-digital-tablet-at-meeting-room-picture-id1189304032?k=20&m=1189304032&s=612x612&w=0&h=ovTNnR0JX2cRZkzMBed9exRO_PamZLlysLDFkXesr4Q=" alt="" class="box-img">
+    <h1>Steve Harvey</h1>
+    <h5>Eye Specialist</h5>
+    <p>Steve is an eye specialist. who treated thousands of patients. He is the one of the best doctors in the city for eye diseases. She is a graduate from the top reputed college in U.S.</p>
+
+  <ul>
+    <li><a href="https://buy.stripe.com/dR62aZeCvc1576M144"><i class="fas fa-wallet"></i></a></li>
+    <li><a href="https://buy.stripe.com/28o5nbcund59cr6289"><i class="far fa-clock"></a></i></li>
+    <li><a href="/map-2"><i class="fas fa-map-marker-alt"></i></a></li>
+  </ul>
+  </div>
+  <div class="alan-btn"></div>
+  <script type="text/javascript"
+  src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+  <script src=
+     "https://smtpjs.com/v3/smtp.js">
+   </script>
+ <script>
+   
+  var lat; var long;
+  function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    lat=0;
+  }
+}
+
+function showPosition(position) {
+  console.log(position)
+  // x.innerHTML = "Latitude: " + position.coords.latitude + 
+  // "<br>Longitude: " + position.coords.longitude;
+  lat=position.coords.latitude;
+   long=position.coords.longitude;
+   
+}
+getLocation();
+
+console.log(lat);
+  
+  var alanBtnInstance = alanBtn({
+    key: "2caec3b618718763b4fa88064b6364232e956eca572e1d8b807a3e2338fdd0dc/stage",
+    onCommand: function (commandData) {
+      if (commandData.command === "login") {
+        //alert("hi, i am sathvik");
+        window.location.href = '/login';
+      }else if (commandData.command === "appointment") {
+        
+        window.location.href = '/index';
+        
+      }else if (commandData.command === "eye specialists") {
+        
+        window.location.href = '/doctors';
+        
+      }else if (commandData.command === "mails") {
+
+        //getLocation();
+        //console.log(lat);
+        Email.send({
+        Host: "smtp.gmail.com",
+        Username: "sathvik26122002@gmail.com",
+        Password: "S@thvik123",
+        To: 'mandavasathvik6@gmail.com,20bec024@iiitdwd.ac.in,20bec023@iiitdwd.ac.in',
+        From: "sathvik26122002@gmail.com",
+        Subject: "Emergency for our customer",
+        Body: `'latitude: ${lat}  longitude:${long} is on emergency'`,
+      });
+     
+         
+         
+       }else if (commandData.command === "jamie") {
+         
+         window.location.href = '/map';
+         
+       }else if (commandData.command === "steve") {
+         
+         window.location.href = '/map-2';
+         
+       }else if (commandData.command === "payoffline") {
+         
+         window.location.href = 'https://buy.stripe.com/dR62aZeCvc1576M144';
+         
+       }else if (commandData.command === "payonline") {
+         
+         window.location.href = 'https://buy.stripe.com/28o5nbcund59cr6289';
+         
+       }
+     },
+     rootEl: document.getElementById("alan-btn"),
+   });
+ </script>
+
+  </body>
+</html>

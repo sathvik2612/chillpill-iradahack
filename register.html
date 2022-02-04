@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REGISTER</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&family=Poppins:wght@300&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    </head>
+    <style>
+      * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+    body {
+      background-color: #c8d8ff;
+      background-image: url('Screenshot__10_-removebg-preview.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 45vw;
+      background-attachment: fixed;
+      font-family: 'Poppins', sans-serif;
+        
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+    .container-left {
+      width: 350px;
+      height: 590px;
+      margin: 150px auto;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #d3d3d5;
+      background-color: #fff;
+    }
+    /* part-one-left-start  */
+    .wrapper-left .part-one {
+      width: 100%;
+      height: 100px;
+      border-radius: 10px;
+      background-color: #dbe5ff;
+      padding: 30px 20px;
+      margin-bottom: 40px;
+    }
+    .wrapper-left .part-one h3 {
+      color: #1933c9;
+      margin-bottom: 4px;
+    }
+    .wrapper-left .part-one p {
+      color: #02021a;
+    }
+
+    .wrapper-left .inp form {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .wrapper-left .inp form .inp-left {
+      border: 0;
+      outline: none;
+      width: 100%;
+      border: 1px solid #d7d6db;
+      border-radius: 7px;
+      height: 40px;
+      margin: 15px 0;
+    }
+    .wrapper-left .inp form input::placeholder {
+      font-size: 12px;
+      color: #9d9d9f;
+    }
+    .wrapper-left .inp {
+      position: relative;
+    }
+    .wrapper-left .inp form input[type="email"],
+    input[type="password"] {
+      padding: 0 50px;
+    }
+    .wrapper-left .inp form input[type="email"]:focus {
+      border: 1px solid #206bff;
+    }
+    .wrapper-left .inp form input[type="password"]:focus {
+      border: 1px solid #115efa;
+    }
+    .wrapper-left .inp form i {
+      color: #555557;
+      position: absolute;
+    }
+    .wrapper-left .inp form i.pass {
+      top: 143.5px;
+      left: 11px;
+    }
+    .wrapper-left .inp form i.envelope {
+      left: 11px;
+      top: 51.5px;
+    }
+    .wrapper-left .inp form label {
+      color: #01000d;
+    }
+    .wrapper-left .buttons {
+      display: flex;
+      flex-direction: column;
+      margin: 15px 0;
+      gap: 12px;
+    }
+    .wrapper-left .buttons .btn-one,
+    .btn-two {
+      border: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 45px;
+      border-radius: 35px;
+    }
+    .wrapper-left .buttons .btn-one {
+      background-color: #c7d7ff;
+      color: #2451aa;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .wrapper-left .buttons .btn-two {
+      background-color: #fff;
+      border: 1px solid #d9d9db;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .wrapper-left .check label {
+      position: absolute;
+      cursor: pointer;
+      font-size: 12px;
+      line-height: 21px;
+      text-align: center;
+      padding: 0 33px;
+      text-align: left;
+    }
+    .wrapper-left .check label input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .wrapper-left .check label span {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      border-radius: 5px;
+      border: 1px solid #cfced3;
+    }
+    label:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+    label input:checked ~ .checkmark {
+      background-color: #8ba8f1;
+    }
+    .checkmark::after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    label input:checked ~ .checkmark:after {
+      display: block;
+    }
+    label .checkmark::after {
+      left: 5.5px;
+      top: 1px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    .wrapper-left .down {
+      position: relative;
+      font-size: 14px;
+      top: 70px;
+    }
+    .wrapper-left .down p {
+      display: inline-block;
+    }
+    /* part-one-left-end  */
+  </style>
+  <body>
+    <div class="container">
+      <!-- section-left-start -->
+
+      <div class="container-left">
+        <div class="wrapper-left">
+          <div class="part-one">
+            <h3>Get started</h3>
+            <p>Lets create your account</p>
+          </div>
+          <div class="inp">
+            <form action="/register" method="post">
+              <label for="" class="email">E-mail </label>
+              <i class="fas fa-envelope envelope"></i>
+              <input
+                class="inp-left"
+                type="email"
+                name="username"
+                placeholder="mhmmd.rezaei4@gmail.com"
+              />
+              <label for="" class="pass">Password </label>
+              <i class="fas fa-lock pass"></i>
+              <input
+                class="inp-left"
+                type="password"
+                placeholder="8+ characters, 2 numbers"
+                name="password"
+                id=""
+              />
+         <!--   </form>
+          </div>-->
+          <div class="buttons">
+            <button class="btn-one" type="submit" href="/chillpill2">Create account</button>
+            <button class="btn-two">
+               Sign up with google
+            </button>
+          </div>
+         </form> 
+         </div>
+          <div class="check">
+            <label for="privacy">
+              I read and accept the User Agreement and <br />
+              Privacy Policy.
+              <input id="privacy" type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="down">
+            <p>Already have an account? 👉</p>
+            <a href="/login"> Log In </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="alan-btn"></div>
+    <script type="text/javascript"
+    src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+    <script src=
+       "https://smtpjs.com/v3/smtp.js">
+     </script>
+   <script>
+     
+     
+     var alanBtnInstance = alanBtn({
+       key: "2caec3b618718763b4fa88064b6364232e956eca572e1d8b807a3e2338fdd0dc/stage",
+       onCommand: function (commandData) {
+         if (commandData.command === "login") {
+           //alert("hi, i am sathvik");
+           window.location.href = '/login';
+         }else if (commandData.command === "appointment") {
+           
+           window.location.href = '/index';
+           
+         }else if (commandData.command === "eye specialists") {
+           
+           window.location.href = '/doctors';
+           
+         }else if (commandData.command === "mails") {
+           
+           
+           Email.send({
+           Host: "smtp.gmail.com",
+           Username: "sathvik26122002@gmail.com",
+           Password: "S@thvik123",
+           To: 'mandavasathvik6@gmail.com,20bec024@iiitdwd.ac.in,20bec023@iiitdwd.ac.in',
+           From: "sathvik26122002@gmail.com",
+           Subject: "Emergency for our customer",
+           Body: "Eshwar ashish, lat:16.5186501,long:80.6652478 is on emergency hurry up to save him",
+         });
+           
+       
+           
+           
+         }else if (commandData.command === "jamie") {
+           
+           window.location.href = '/map';
+           
+         }else if (commandData.command === "steve") {
+           
+           window.location.href = '/map-2';
+           
+         }else if (commandData.command === "payoffline") {
+           
+           window.location.href = 'https://buy.stripe.com/dR62aZeCvc1576M144';
+           
+         }else if (commandData.command === "payonline") {
+           
+           window.location.href = 'https://buy.stripe.com/28o5nbcund59cr6289';
+           
+         }
+       },
+       rootEl: document.getElementById("alan-btn"),
+     });
+   </script>
+  </body>
+</html>

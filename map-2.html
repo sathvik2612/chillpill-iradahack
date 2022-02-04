@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+      .googlemap{
+        width: 100%;
+        padding-top:10%;
+      }
+      body{
+        background:black;
+      }
+    </style>
+</head>
+<body>
+  <iframe class="googlemap" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15226.63213052064!2d78.4325798!3d17.4281913!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x395e0d448c95b988!2sChalla%20Eye%20Care%20Centre%20%7C%20Best%20Eye%20Hospital%20in%20Hyderabad%20%7C%20Cataract%20and%20Lasik%20Eye%20Surgery!5e0!3m2!1sen!2sin!4v1635084755378!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <div class="alan-btn"></div>
+  <script type="text/javascript"
+  src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+  <script src=
+     "https://smtpjs.com/v3/smtp.js">
+   </script>
+ <script>
+   
+   
+   var alanBtnInstance = alanBtn({
+     key: "2caec3b618718763b4fa88064b6364232e956eca572e1d8b807a3e2338fdd0dc/stage",
+     onCommand: function (commandData) {
+       if (commandData.command === "login") {
+         //alert("hi, i am sathvik");
+         window.location.href = '/login';
+       }else if (commandData.command === "appointment") {
+         
+         window.location.href = '/index';
+         
+       }else if (commandData.command === "eye specialists") {
+         
+         window.location.href = '/doctors';
+         
+       }else if (commandData.command === "mails") {
+         
+         Email.send({
+         Host: "smtp.gmail.com",
+         Username: "sathvik26122002@gmail.com",
+         Password: "S@thvik123",
+         To: 'mandavasathvik6@gmail.com,20bec024@iiitdwd.ac.in',
+         From: "sathvik26122002@gmail.com",
+         Subject: "Emergency for our customer",
+         Body: "Eshwar ashish, location: 16.518841979800495, 80.66519789863592 is on emergency hurry up to save him",
+       })
+         
+     
+         
+         
+       }else if (commandData.command === "jamie") {
+         
+         window.location.href = '/map';
+         
+       }else if (commandData.command === "steve") {
+         
+         window.location.href = '/map-2';
+         
+       }else if (commandData.command === "payoffline") {
+         
+         window.location.href = 'https://buy.stripe.com/dR62aZeCvc1576M144';
+         
+       }else if (commandData.command === "payonline") {
+         
+         window.location.href = 'https://buy.stripe.com/28o5nbcund59cr6289';
+         
+       }
+     },
+     rootEl: document.getElementById("alan-btn"),
+   });
+ </script>
+</body>
+</html>

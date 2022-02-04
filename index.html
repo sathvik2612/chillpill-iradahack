@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+  <link rel="stylesheet" href=style.css>
+  <script src="https://kit.fontawesome.com/22b75f9236.js" crossorigin="anonymous"></script>
+
+
+</head>
+<style>
+  *{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+body{
+  background-image: url('https://i.pinimg.com/originals/b9/c8/f8/b9c8f893c9a782033a01f47e0c0b1d6e.jpg');
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container{
+  width:100%;
+  height:100vh;
+  padding: 0 8%;
+}
+.container h1{
+  text-align: center;
+  padding-top: 10%;
+  margin-bottom: 60px;
+  font-weight: 600;
+  position:relative;
+}
+.container h1::after{
+  content:'';
+  background: #303ef7;
+  width:100px;
+  height: 5px;
+  position: absolute;
+  bottom:-5px;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+.row{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-gap: 30px;
+
+}
+.service{
+  text-align:center;
+  padding:25px 10px;
+  border-radius:5px;
+  font-size:14px;
+  cursor: pointer;
+  background: transparent;
+  transition: transform 0.5s, background 0.5s;
+
+}
+.service i{
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #303ef7;
+
+}
+
+.service h2{
+  font-weight:600;
+  margin-bottom: 8px;
+}
+.service:hover{
+  background: #303ef7;
+  color: #fff;
+  transform: scale(1.05);
+}
+.service:hover i{
+  color:#fff;
+
+}
+a{
+  text-decoration:none;
+}
+
+</style>
+<body>
+
+  <div class = "container">
+    <h1>SERVICES</h1>
+      <div class="row">
+        <div class="service">
+          <i class="fas fa-heartbeat"></i>
+          <h2>Cardiologists</h2>
+          <p>We have the best cardiologists in the city. who are highly reputed.</p>
+
+        </div>
+        <a href="/doctors">
+        <div class="service" >
+
+          <i class="far fa-eye"></i>
+          <h2> Eye Specialists</h2>
+          <p>We have the best eye-specialists in the city. who are highly reputed.</p>
+
+        </div>
+      </a>
+        <div class="service">
+          <i class="fas fa-atom"></i>
+          <h2>Neurology</h2>
+          <p>We have the best neurologits in the city. who are highly reputed.</p>
+
+        </div>
+        <div class="service">
+          <i class="fas fa-brain"></i>
+          <h2>Psychyartists</h2>
+          <p>We have the best psychiartists in the city. who are highly reputed.</p>
+
+
+      </div>
+  </div>
+  <div class="alan-btn"></div>
+  <script type="text/javascript"
+  src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+  <script src=
+     "https://smtpjs.com/v3/smtp.js">
+   </script>
+ <script>
+   
+     var lat; var long;
+  function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    lat=0;
+  }
+}
+
+function showPosition(position) {
+  console.log(position)
+  // x.innerHTML = "Latitude: " + position.coords.latitude + 
+  // "<br>Longitude: " + position.coords.longitude;
+  lat=position.coords.latitude;
+   long=position.coords.longitude;
+   
+}
+getLocation();
+
+console.log(lat);
+  
+  var alanBtnInstance = alanBtn({
+    key: "2caec3b618718763b4fa88064b6364232e956eca572e1d8b807a3e2338fdd0dc/stage",
+    onCommand: function (commandData) {
+      if (commandData.command === "login") {
+        //alert("hi, i am sathvik");
+        window.location.href = '/login';
+      }else if (commandData.command === "appointment") {
+        
+        window.location.href = '/index';
+        
+      }else if (commandData.command === "eye specialists") {
+        
+        window.location.href = '/doctors';
+        
+      }else if (commandData.command === "mails") {
+        
+        Email.send({
+        Host: "smtp.gmail.com",
+        Username: "sathvik26122002@gmail.com",
+        Password: "S@thvik123",
+        To: 'mandavasathvik6@gmail.com,20bec024@iiitdwd.ac.in,20bec023@iiitdwd.ac.in',
+        From: "sathvik26122002@gmail.com",
+        Subject: "Emergency for our customer",
+        Body: `'latitude: ${lat}  longitude:${long} is on emergency'`,
+      })
+     
+         
+         
+       }else if (commandData.command === "jamie") {
+         
+         window.location.href = '/map';
+         
+       }else if (commandData.command === "steve") {
+         
+         window.location.href = '/map-2';
+         
+       }else if (commandData.command === "payoffline") {
+         
+         window.location.href = 'https://buy.stripe.com/dR62aZeCvc1576M144';
+         
+       }else if (commandData.command === "payonline") {
+         
+         window.location.href = 'https://buy.stripe.com/28o5nbcund59cr6289';
+         
+       }
+     },
+     rootEl: document.getElementById("alan-btn"),
+   });
+ </script>
+
+</body>
+
+</html>
